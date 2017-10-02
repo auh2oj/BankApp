@@ -1,5 +1,7 @@
 package com.web.bank.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -36,6 +38,13 @@ public class Customer {
 	@Column(length=20)
 	private String ssn;
 	
+	@Column
+	private Date requestDate; // date that request was sent
+	
+	// status can be Pending, Accepted, or Rejected depending on the discretion of the Bank Manager
+	@Column(length=10)
+	private String status;
+	
 	public String getName() {
 		return name;
 	}
@@ -71,6 +80,18 @@ public class Customer {
 	}
 	public void setSsn(String ssn) {
 		this.ssn = ssn;
+	}
+	public Date getRequestDate() {
+		return requestDate;
+	}
+	public void setRequestDate(Date requestDate) {
+		this.requestDate = requestDate;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	
 	

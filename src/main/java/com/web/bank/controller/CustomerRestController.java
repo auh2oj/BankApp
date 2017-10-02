@@ -22,6 +22,8 @@ public class CustomerRestController {
 			consumes = {"application/json", "application/xml"},
 			produces = {"application/json", "application/xml"})
 	@ResponseBody public String addEmployee(@RequestBody CustomerForm cf) {
+		System.out.println("In Rest API, Customer data:");
+		System.out.println(cf);
 		return customerService.addCustomer(cf);
 	}
 }

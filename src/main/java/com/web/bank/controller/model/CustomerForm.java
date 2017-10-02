@@ -1,5 +1,9 @@
 package com.web.bank.controller.model;
 
+import java.util.Date;
+
+import javax.persistence.Column;
+
 public class CustomerForm {
 
 	
@@ -9,6 +13,9 @@ public class CustomerForm {
 	private String contact; //phone number
 	private double loan; //loan amount
 	private String ssn;
+	private Date requestDate = new Date(); // date that request was sent
+	// status can be Pending, Accepted, or Rejected depending on the discretion of the Bank Manager
+	private String status = "Pending";
 	
 	public String getName() {
 		return name;
@@ -45,5 +52,17 @@ public class CustomerForm {
 	}
 	public void setSsn(String ssn) {
 		this.ssn = ssn;
+	}
+	public Date getRequestDate() {
+		return requestDate;
+	}
+	public void setRequestDate(Date requestDate) {
+		this.requestDate = requestDate;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 }
