@@ -7,31 +7,27 @@
 			 http://www.springframework.org/schema/security 
                     http://www.springframework.org/schema/security/spring-security-3.2.xsd">
         
- 	<security:http auto-config="true" use-expressions="true">
+ 	<security:http auto-config="true" use-expressions="true" access-denied-page="/accessDenied" >
  	
-		<security:intercept-url pattern="/login" access="permitAll"/>
+		<security:intercept-url pattern="/auth" access="permitAll"/>
 		<security:intercept-url pattern="/sessionTimeout" access="permitAll"/>
-		<security:intercept-url pattern="/manager**" access="Bank_Manager"/>
-		<security:intercept-url pattern="/leader**" access="Team_Leader"/>
-		<security:intercept-url pattern="/agent**" access="Agent"/>
+		<security:intercept-url pattern="/invalidLogin" access="permitAll"/>
 		
-		<security:form-login login-page="/login" default-target-url="/login.jsp"/>
+		<security:intercept-url pattern="/manager**" access="hasAnyRole('admin', 'manager')"/> 
 		
-		<security:logout invalidate-session="true" logout-success-url="/login" logout-url="/logout"/>
+		<security:form-login login-page="/auth" authentication-failure-url="/invalidLogin.jsp" default-target-url="/home.jsp"/>
+		
+		<security:logout invalidate-session="true" logout-success-url="/auth" logout-url="/logout"/>
 		
 		<security:session-management invalid-session-url="/sessionTimeout"/>
 	
 	</security:http>
 	
-	<!-- Declare an authentication-manager -->
+	<!-- Declare an authentication-manager to use a custom userDetailsService -->
 	<security:authentication-manager>
-	        <security:authentication-provider>
-	        		<security:user-service>
-	        			<security:user name="Bank Manager" password="manager" authorities="Bank_Manager"/>
-	        			<security:user name="Team Leader" password="leader" authorities="Team_Leader"/>
-	        			<security:user name="Agent" password="agent" authorities="Agent"/>
-	        		</security:user-service>
-	        </security:authentication-provider>
+	        <security:authentication-provider user-service-ref="BankSpringSecurityServiceImpl"><!--
+	        		<security:password-encoder ref="passwordEncoder"/>
+	        --></security:authentication-provider>
 	</security:authentication-manager>
 	
 	<!-- Use a Md5 encoder since the user's passwords are stored as Md5 hashes in the database -->

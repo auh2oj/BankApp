@@ -16,9 +16,9 @@
 		<import resource="customer-dao.xml"/>
 		<import resource="customer-service.xml"/>
 		<import resource="spring-hibernate-service.xml"/>
+		<import resource="customer-spring-security.xml"/>
 <!-- 		<import resource="employee-caching.xml"/>
 		<import resource="employee-advice-dao.xml"/>
-		<import resource="employee-spring-security.xml"/>
 		<import resource="soap-service-spring.xml"/> -->
 			
 				
