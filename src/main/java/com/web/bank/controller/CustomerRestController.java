@@ -15,10 +15,10 @@ import com.web.bank.service.CustomerService;
 public class CustomerRestController {
 	
 	@Autowired
-	@Qualifier("EmployeeServiceImpl")
+	@Qualifier("CustomerServiceImpl")
 	private CustomerService customerService;
 	
-	@RequestMapping(value="/register", method=RequestMethod.POST,
+	@RequestMapping(value="register.do", method=RequestMethod.POST,
 			consumes = {"application/json", "application/xml"},
 			produces = {"application/json", "application/xml"})
 	@ResponseBody public String addEmployee(@RequestBody CustomerForm cf) {

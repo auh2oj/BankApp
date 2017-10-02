@@ -24,7 +24,7 @@ function close_window() {
 	<hr />
 	<span style="color: red; font-size: 16px;margin-left: 40px;">${message}</span><br><br>
 	<div style="margin-left: 30px;">
-		<form action="request.do" method="POST">
+		<form action="register.do" method="POST">
 			<table>
 				<tr>
 					<td>
@@ -63,9 +63,11 @@ function close_window() {
 						</div>
 						
 						
-						<button type="submit" class="btn btn-danger"
+<!-- 						<input type="submit" class="btn btn-danger"
 							style="display: inline; margin-left: 100px; background-color: #00ff80; color: black">Save
-							Profile</button>
+							Profile</input> -->
+							<input type="submit" class="btn btn-danger"
+							style="display: inline; margin-left: 100px; background-color: #00ff80; color: black" value="SAVE PROFILE"/>
 						<button type="button" class="btn btn-danger"
 							style="display: inline; margin-left: 30px; background-color: #ff8080;"
 							ng-click="clearSearch();"><a href="javascript:close_window();">Close</a></button>
