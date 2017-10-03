@@ -18,12 +18,12 @@ import org.springframework.stereotype.Service;
 import com.web.bank.dao.AuthDao;
 import com.web.bank.model.LoginEntity;
 
-@Service("BankSpringSecurityServiceImpl")
-@Scope("singleton")
+//@Service("BankSpringSecurityServiceImpl")
+//@Scope("singleton")
 public class BankSpringSecurityServiceImpl implements UserDetailsService {
 
-	@Autowired
-	@Qualifier("AuthDaoImpl")
+//	@Autowired
+//	@Qualifier("AuthDaoImpl")
 	AuthDao authDao;
 
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

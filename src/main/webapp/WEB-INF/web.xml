@@ -25,10 +25,10 @@
     <url-pattern>/</url-pattern>
   </servlet-mapping>
   
-	 <filter>
+<!-- 	 <filter>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-	</filter> 
+	</filter>  -->
 	
 	<!-- Comment out the filter mapping below to turn off Spring Security -->
 <!-- 	<filter-mapping>

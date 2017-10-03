@@ -14,8 +14,8 @@ import com.web.bank.service.AuthService;
 @Controller
 public class AuthController {
 
-	@Autowired
-	@Qualifier("AuthServiceImpl")
+//	@Autowired
+//	@Qualifier("AuthServiceImpl")
 	private AuthService authService;
 
 	@RequestMapping(value="auth-user", method=RequestMethod.POST)

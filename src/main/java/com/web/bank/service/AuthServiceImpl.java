@@ -8,12 +8,12 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.web.bank.dao.AuthDao;
 
-@Service("AuthServiceImpl")
-@Transactional(propagation=Propagation.REQUIRED)
+//@Service("AuthServiceImpl")
+//@Transactional(propagation=Propagation.REQUIRED)
 public class AuthServiceImpl implements AuthService {
 
-	@Autowired
-	@Qualifier("AuthDaoImpl")
+//	@Autowired
+//	@Qualifier("AuthDaoImpl")
 	private AuthDao authDao;
 
 	public String authUser(String username, String password) {
