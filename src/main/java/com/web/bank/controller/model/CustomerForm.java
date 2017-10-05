@@ -6,7 +6,7 @@ import javax.persistence.Column;
 
 public class CustomerForm {
 
-	
+	private int cid;
 	private String name;
 	private int age;
 	private String address;
@@ -17,6 +17,12 @@ public class CustomerForm {
 	// status can be Pending, Accepted, or Rejected depending on the discretion of the Bank Manager
 	private String status = "Pending";
 	
+	public int getCid() {
+		return cid;
+	}
+	public void setCid(int cid) {
+		this.cid = cid;
+	}
 	public String getName() {
 		return name;
 	}
