@@ -16,6 +16,7 @@ public class CustomerForm {
 	private Date requestDate = new Date(); // date that request was sent
 	// status can be Pending, Accepted, or Rejected depending on the discretion of the Bank Manager
 	private String status = "Pending";
+	private String email;
 	
 	public int getCid() {
 		return cid;
@@ -70,5 +71,11 @@ public class CustomerForm {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 }
